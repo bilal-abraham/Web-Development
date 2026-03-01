@@ -1,7 +1,1 @@
-.updates {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    margin: auto;
-    color: var(--bg);
-}
+/* Intentionally empty — styles are in updates/UpdatesHero.css */

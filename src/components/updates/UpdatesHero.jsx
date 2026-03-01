@@ -1,54 +1,78 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { updates } from '../../data/updatesData';
 import '../../styles/updates/UpdatesHero.css';
 
-const UpdatesHero = () => {
-  // Example data array with label + date.
-  // (They are ordered from newest at the top to oldest at the bottom.)
-  const updatesData = [
-    { id: 1, label: 'Hive Partnership', date: '12.05.24', route: '/updates/hive-partnership' },
-    { id: 2, label: 'HMC Clinic', date: '8.16.24', route: '/updates/hmc-clinic' },
-    { id: 3, label: 'Gen 0.3', date: '04.21.24', route: '/updates/gen-0.3' },
-    { id: 4, label: 'Gen 0.2', date: '02.15.24', route: '/updates/gen-0.2' },
-    { id: 5, label: 'Gen 0.1', date: '12.25.23', route: '/updates/gen-0.1' },
-  ];
+const sorted = [...updates].sort((a, b) => {
+  const parse = (d) => {
+    const [m, dd, yy] = d.split('.');
+    return new Date(`20${yy}-${m.padStart(2, '0')}-${dd.padStart(2, '0')}`);
+  };
+  return parse(b.date) - parse(a.date);
+});
 
-  return (
-    <section className="updates_hero" role="region" aria-label="Updates Workflow">
-      <div className="updates_hero_wrapper">
-        <div className="updates_hero_content">
-          <h1 className="updates_hero_title">Updates</h1>
-          <p className="updates_hero_subtitle">Click a node to navigate to the corresponding update. </p>  
-          <div className="updates_timeline">
-            {/* Vertical line through the center of the timeline */}
-            <div className="timeline_line" aria-hidden="true" />
+const upcoming = [
+  { label: 'CSUN Accessibility Conference', date: '03.09.25' },
+];
 
-            {updatesData.map((update) => (
-              <div className="timeline_item" key={update.id}>
-                {/* Column 1: Text on the left, right–aligned */}
-                <div className="timeline_text">
-                  <h3 className="timeline_label">{update.label}</h3>
-                  <p className="timeline_date">{update.date}</p>
-                </div>
+const UpdatesHero = () => (
+  <section className="updates-hero" role="region" aria-label="Updates roadmap">
+    <div className="updates-hero-shell">
+      <span className="updates-hero-eyebrow">Roadmap</span>
+      {/* <h1 className="updates-hero-title">Our Journey</h1> */}
 
-                {/* Column 2: Node in center */}
-                <div className="node_container">
-                  <Link to={update.route} className="node_link" aria-label={`${update.name} on ${update.date}. Click for a detailed report!`}>
-                    <div className="node_outer_circle">
-                      <div className="node_inner_circle" />
-                    </div>
-                  </Link>
-                </div>
+      {/* Where we're heading — future items on top */}
+      <div className="roadmap-future">
+        <div className="roadmap-future-line" aria-hidden="true" />
 
-                {/* Column 3: Empty spacer for grid balance */}
-                <div className="timeline_spacer" />
-              </div>
-            ))}
-          </div>
+        {/* Leading fade dots */}
+        <div className="roadmap-fade-dots roadmap-fade-dots--top" aria-hidden="true">
+          <span className="roadmap-fade-dot" />
+          <span className="roadmap-fade-dot" />
+          <span className="roadmap-fade-dot" />
         </div>
+
+        {upcoming.reverse().map((item, i) => (
+          <div
+            key={item.label}
+            className={`roadmap-node roadmap-node-future ${i % 2 === 0 ? 'roadmap-node--left' : 'roadmap-node--right'}`}
+          >
+            <div className="roadmap-dot-col">
+              <span className="roadmap-dot roadmap-dot-future" />
+            </div>
+            <div className="roadmap-card">
+              <span className="roadmap-card-title">{item.label}</span>
+              <span className="roadmap-card-date">{item.date}</span>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+
+      {/* Past updates */}
+      <div className="updates-roadmap">
+        <div className="roadmap-line" aria-hidden="true" />
+
+        {sorted.map((update, i) => (
+          <Link
+            key={update.slug}
+            to={`/updates/${update.slug}`}
+            className={`roadmap-node ${i % 2 === 0 ? 'roadmap-node--left' : 'roadmap-node--right'}`}
+            aria-label={`${update.title} — ${update.date}`}
+          >
+            <div className="roadmap-dot-col">
+              <span className="roadmap-dot" />
+            </div>
+
+            <div className="roadmap-card">
+              <span className="roadmap-card-category">{update.category}</span>
+              <span className="roadmap-card-title">{update.title}</span>
+              <span className="roadmap-card-date">{update.date}</span>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default UpdatesHero;

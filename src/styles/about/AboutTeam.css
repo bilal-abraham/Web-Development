@@ -1,0 +1,71 @@
+/* Founders grid */
+.about-team-founders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Member / advisor card grid */
+.about-team-member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-team-member-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.75rem 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.about-team-member-card:hover {
+  border-color: var(--alt);
+  background: rgba(101, 169, 253, 0.03);
+}
+
+.about-team-member-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-team-member-role {
+  font-size: 0.9375rem;
+  color: var(--text-3);
+}
+
+@media (max-width: 1024px) {
+  .about-team-founders-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-team-founders-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 2rem;
+  }
+
+  .about-team-member-card {
+    padding: 1.5rem;
+  }
+
+  .about-team-member-name {
+    font-size: 1.125rem;
+  }
+
+  .about-team-member-role {
+    font-size: 0.875rem;
+  }
+}

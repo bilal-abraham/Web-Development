@@ -47,24 +47,10 @@ const SetupHero = () => {
         'Feel for the vibration feedback'
       ]
     },
-{
-      id: 'wifi_info',
-      title: 'Get Wi-Fi information',
-      description: 'To use the device, you can either connect the device to your hotspot or connect the device to your local wifi. This is easy to change in the future.',
-      image: '/public/imgs/gen3.jpg',
-      imageAlt: 'Smartphone showing Bluetooth pairing screen with ExploraVist device detected',
-      instructions: [
-		//TODO: need to format this better
-        'In order to connect the device to your hotspot, you\'ll need 2 pieces of information',
-		'To get the SSID: Settings > General > About > Name \n To get the Password: go to settings > Personal Hotspot. Look for the Wi-Fi password and copy it down.',
-		'To get the Wi-Fi information: Remember the SSID and Password of your local Wi-Fi network.',
-        'Remember these two pieces of information as you will need them in the next step to connect your device to your hotspot.',
-      ]
-    },
     {
       id: 'pair',
       title: 'Pair with Phone',
-      description: 'Connect to the \'ExploraLink\' Wifi hosted by the device',
+      description: 'Connect your device to your smartphone via Bluetooth.',
       image: '/public/imgs/gen3.jpg',
       imageAlt: 'Smartphone showing Bluetooth pairing screen with ExploraVist device detected',
       instructions: [
@@ -247,7 +233,7 @@ const SetupHero = () => {
             If you encounter any issues during setup, please contact our support team.
             You can also refer to the instruction manual included with your device.
           </p>
-          <a href="/contact" className="help_link">
+          <a href="/waitlist" className="help_link">
             Contact Support
           </a>
         </div>

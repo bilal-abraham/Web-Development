@@ -1,0 +1,115 @@
+.about-journey-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.about-journey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.about-journey-card:hover {
+  border-color: var(--alt);
+  background: rgba(101, 169, 253, 0.03);
+}
+
+.about-journey-card-heading {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--alt);
+  margin: 0;
+}
+
+.about-journey-card-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* Origin story + audio */
+.about-journey-origin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding-top: clamp(4rem, 9vw, 6rem);
+}
+
+.about-journey-origin-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.about-journey-audio-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-two);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
+}
+
+.about-journey-audio-btn svg {
+  color: var(--alt);
+}
+
+.about-journey-audio-btn:hover {
+  border-color: var(--alt);
+  transform: translateY(-2px);
+}
+
+.about-journey-audio-btn:focus-visible {
+  outline: 2px solid var(--alt-4);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .about-journey-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-journey-origin-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-journey-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-journey-card-heading {
+    font-size: 1.25rem;
+  }
+
+  .about-journey-card-text {
+    font-size: 1rem;
+  }
+
+  .about-journey-origin-title {
+    font-size: 1.5rem;
+  }
+
+  .about-journey-audio-btn {
+    font-size: 0.9375rem;
+    padding: 0.9rem 1.75rem;
+  }
+}

@@ -53,7 +53,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
             >
-              <Instagram size={24} aria-hidden="true" />
+              <Instagram size={28} aria-hidden="true" />
             </a>
             <a 
               href="https://x.com/ExploraVist_Inc" 
@@ -62,7 +62,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="Visit our X"
             >
-              <Twitter size={24} aria-hidden="true" />
+              <Twitter size={28} aria-hidden="true" />
             </a>
             <a 
               href="https://www.linkedin.com/company/exploravist" 
@@ -71,7 +71,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="Follow us on LinkedIn"
             >
-              <Linkedin size={24} aria-hidden="true" />
+              <Linkedin size={28} aria-hidden="true" />
             </a>
             <a 
               href="https://github.com/exploravist" 
@@ -80,11 +80,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label="Visit our GitHub"
             >
-              <Github size={24} aria-hidden="true" />
+              <Github size={28} aria-hidden="true" />
             </a>
           </div>
           <div className="footer-email">
-            <Mail size={16} aria-hidden="true" />
+            <Mail size={20} aria-hidden="true" />
             <button
               className="email-link"
               onClick={handleCopyEmail}
