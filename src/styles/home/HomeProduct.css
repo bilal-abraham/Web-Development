@@ -1,0 +1,148 @@
+/* Remove default section padding — product relies on sub-blocks */
+.home-product.section-block {
+  padding-top: 0;
+  padding-bottom: clamp(6rem, 14vw, 10rem);
+}
+
+/* Glance: 3 feature cards */
+.home-product-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0 0 4rem;
+  padding: 0;
+}
+
+.home-product-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: var(--text-2);
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 2.25rem 3rem;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.home-product-icon-item:hover {
+  border-color: var(--alt);
+  background: rgba(101, 169, 253, 0.04);
+}
+
+.home-product-icon-item svg {
+  color: var(--alt);
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+/* Device image */
+.home-product-device-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.home-product-device-img {
+  width: 100%;
+  max-width: min(440px, 90vw);
+  height: auto;
+  display: block;
+}
+
+/* Glasses gallery */
+.home-product-glasses-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.home-product-glasses-img {
+  width: 100%;
+  max-width: min(480px, 44vw);
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Screenshots */
+.home-product-screenshots-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.home-product-screenshots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.home-product-screenshot {
+  width: auto;
+  max-width: min(340px, 92vw);
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--line-2);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 900px) {
+  .home-product-icon-item {
+    font-size: 1.125rem;
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-product-icons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-product-icon-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .home-product-icon-item svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-product-screenshots {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-product-screenshot {
+    max-width: min(300px, 94vw);
+  }
+
+  .home-product-glasses-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .home-product-glasses-img {
+    max-width: min(340px, 90vw);
+  }
+}

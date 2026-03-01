@@ -7,7 +7,6 @@
 /* New Font: Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=REM:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 :root {
     /* Sizing */
     --nav-size: 8vh;
@@ -31,7 +30,6 @@
     --text-3: #8a8f98;
 
     /* Colors */
-    /* --alt: #2458e6; <- old blue that looks like be my eyes*/
     --alt: #65A9FD;
     --alt-2: #0a21c0;
     --alt-3: #17207a;
@@ -54,12 +52,11 @@ body {
     overflow-x: hidden;
     width: 100vw;
     background-color: var(--bg);
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color:var(--text);
 }
 
 ul {
@@ -76,38 +73,6 @@ a {
     letter-spacing: .1rem;
 }
 
-*,
- *::before,
- *::after {
-     box-sizing: border-box;
- }
-
- h1 {
-    font-family: "REM", sans-serif;
- }
-
-
- h2 {
-    font-family: "REM", sans-serif;
-    font-size: 48px;
-    font-weight: 100px;
-    font-style:normal;
-    margin-top: 0px;
-    margin-bottom: 24px;
- }
-
- h3 {
-    font-size: 36px;
-    margin: 0px;
- }
-
- .home-padding {
-    padding: 0px 7vw;
- }
-
- /* source: https://css-shape.com/hexagon/ */
-.hexagon{
-    position: relative;
-    aspect-ratio: 1/cos(30deg);
-    clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%); 
+*, *::before, *::after {
+    box-sizing: border-box;
 }

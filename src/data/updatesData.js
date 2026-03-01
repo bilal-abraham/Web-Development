@@ -34,7 +34,7 @@ export const updates = [
        { type: 'paragraph', content: "After positive feedback from visiting the San Bernardino lighthouse for the blind, we think this version is ready for the market! Because of this we are just doing one more iteration to Gen 4 which will have a PCB that allows us to mass produce it. On top of that we hope to also add a few more easy to implement features!" },
        { type: 'header', content: "We want to add:", headerLevel: 3 },
        { type: 'list', items: ["Voice Input: Ask questions about pictures for a specific description", "Voice Assistant: Ask any question to the AI without a picture", "Voice Memos: Record notes for yourself so you can replay them", "App Support: Partner iPhone/Android app to connect your device to the internet without needing to call with us to set it up!"] },
-       { type: 'paragraphWithLink', content: "If you are interested in testing the device for free, visit our", linkText: "Get Involved", linkUrl: "/contact" },
+       { type: 'paragraphWithLink', content: "If you are interested in testing the device for free, visit our", linkText: "Waitlist", linkUrl: "/waitlist" },
        { type: 'header', content: "Click the picture to see a video of it working!", headerLevel: 3 },
        { type: 'imageLink', imageKey: "gen3", link: "https://drive.google.com/file/d/1CzRA4ILdGap4miWN8zYAqFEqi0FCe1_o/view" }
      ]
@@ -63,5 +63,42 @@ export const updates = [
        { type: 'header', content: "Click below to read the full article!", headerLevel: 3 },
        { type: 'imageLink', imageKey: "hive-partners", link: "https://us14.campaign-archive.com/?u=9be17699582e7f4b8d4a76675&id=7746d38772" }
      ]
-   }
+   },
+   {
+    slug: "sagetank-2025",
+    category: "Awards",
+    date: "02.21.25",
+    title: "ExploraVist Wins 1st Place at SageTank 2025",
+    sections: [
+      { 
+        type: "paragraph", 
+        content: "We’re thrilled to share that ExploraVist took 1st place in this year’s Pomona Ventures SageTank 2025 pitch competition!" 
+      },
+      { 
+        type: "paragraph", 
+        content: "After placing 2nd last year, our team came back with renewed determination, a refined vision, and proudly brought home the top prize. This milestone is a testament to the hard work, creativity, and purpose driving our mission to make the world more accessible for individuals with visual impairments." 
+      },
+      { 
+        type: "paragraph", 
+        content: "For those unfamiliar, SageTank is the flagship startup pitch competition hosted annually by Pomona Ventures, where top student-led ventures from across the Claremont Colleges pitch to a panel of investors, founders, and industry leaders. It’s an incredible platform to showcase innovation, receive valuable feedback, and gain momentum." 
+      },
+      { 
+        type: "paragraph", 
+        content: "A heartfelt thank you to Pomona Ventures, the judges, all the inspiring teams who pitched alongside us, and Jordan Battaglia for their guidance in forming our pitch." 
+      },
+      { 
+        type: "paragraph", 
+        content: "We’re especially grateful to Ashwini (Asha) Srikantiah, Fred Leichter, and The Hive (The Rick and Susan Sontag Center for Collaborative Creativity) for their ongoing mentorship and support throughout this journey." 
+      },
+      { 
+        type: "paragraph", 
+        content: "We’re excited to keep building, learning, and pushing forward." 
+      },
+      { 
+        type: "header", 
+        content: "Onward.", 
+        headerLevel: 3 
+      }
+    ]
+  }
  ];

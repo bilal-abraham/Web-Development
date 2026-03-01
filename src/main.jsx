@@ -5,7 +5,7 @@ import Home from './routes/Home.jsx';
 import About from './routes/About.jsx';
 import Updates from './routes/Updates.jsx';
 import UpdatesPage from './routes/UpdatesPage.jsx';
-import Contact from './routes/Contact.jsx';
+import Waitlist from './routes/Waitlist.jsx';
 import Setup from './routes/Setup.jsx';
 import Admin from './routes/Admin.jsx';
 import Error404 from './routes/Error404.jsx';
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/updates', element: <Updates /> },
       { path: '/updates/:slug', element: <UpdatesPage /> },
-      { path: '/contact', element: <Contact /> },
+      { path: '/waitlist', element: <Waitlist /> },
       { path: '/setup', element: <Setup /> },
       { path: '/admin', element: <Admin /> },
       { path: '*', element: <Error404 /> }
