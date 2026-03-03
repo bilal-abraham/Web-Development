@@ -63,7 +63,7 @@ const AboutTeam = () => (
     </div>
 
     {/* Advisors */}
-    <div className="section-sub-block about-team-advisors-block">
+    {/* <div className="section-sub-block about-team-advisors-block">
       <h3 className="section-sub-title">Advisors</h3>
       <ul className="about-team-member-grid" role="list">
         {advisors.map(({ name }) => (
@@ -72,7 +72,7 @@ const AboutTeam = () => (
           </li>
         ))}
       </ul>
-    </div>
+    </div> */}
   </SectionBlock>
 );
 

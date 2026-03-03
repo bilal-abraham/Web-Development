@@ -18,7 +18,7 @@ const HomeProduct = () => (
   <SectionBlock eyebrow="Our product" className="home-product" id="product">
     {/* Glance — hardware */}
     <div className="section-sub-block home-product-glance">
-      <h3 className="section-sub-title">Glance</h3>
+      <h3 className="section-sub-title">ExploraVist Wearable</h3>
       <p className="section-sub-subtitle">Our wearable hardware—camera, speaker, and microphone.</p>
       <p className="section-sub-text">
         Simple by design: just a camera, speaker, and microphone. Attach it to any pair of glasses or wear it on your favorite lanyard.
