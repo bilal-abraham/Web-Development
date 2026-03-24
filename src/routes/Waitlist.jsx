@@ -4,17 +4,35 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Waitlist.css';
 
+const API_ENDPOINT = 'https://mesvi31h6k.execute-api.us-west-2.amazonaws.com/signup';
+
 const Waitlist = () => {
   const [email, setEmail] = useState('');
   const [glance, setGlance] = useState(true);
   const [mailingList, setMailingList] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [status, setStatus] = useState('');
   const closeRef = useRef(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email.trim()) return;
-    setShowModal(true);
+    setStatus('submitting');
+    try {
+      const res = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, glance, mailingList }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setShowModal(true);
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const closeModal = () => {
@@ -75,11 +93,16 @@ const Waitlist = () => {
               <button
                 type="submit"
                 className="waitlist-page-submit"
-                disabled={!email.trim()}
+                disabled={status === 'submitting' || !email.trim()}
               >
-                <span>Join the Waitlist</span>
-                <ArrowRight size={20} aria-hidden="true" />
+                <span>{status === 'submitting' ? 'Joining…' : 'Join the Waitlist'}</span>
+                {status !== 'submitting' && <ArrowRight size={20} aria-hidden="true" />}
               </button>
+              {status === 'error' && (
+                <p className="waitlist-page-error">
+                  Something went wrong. Try again or email exploravist@exploravist.net.
+                </p>
+              )}
             </form>
           </div>
         </section>
