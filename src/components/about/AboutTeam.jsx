@@ -2,16 +2,13 @@ import React from 'react';
 import SectionBlock from '../home/SectionBlock';
 import FounderCard from './FounderCard';
 import ketImage from '../../imgs/ket.jpg';
-import domImage from '../../imgs/dom.jpg';
 import bilalImage from '../../imgs/bilal.jpg';
 import ketIntro from '../../assets/ket.mp3';
-import domIntro from '../../assets/dom.mp3';
 import bilalIntro from '../../assets/bilal.mp3';
 import '../../styles/about/AboutTeam.css';
 
 const founders = [
   { name: 'Ket Hollingsworth', role: 'CEO', linkedIn: 'https://www.linkedin.com/in/ket-hollingsworth/', audioClip: ketIntro, image: ketImage },
-  { name: 'Dominick Quaye', role: 'CHO', linkedIn: 'https://www.linkedin.com/in/dominick-q-907baa210/', audioClip: domIntro, image: domImage },
   { name: 'Bilal Abraham', role: 'CSO', linkedIn: 'https://www.linkedin.com/in/bilal-abraham/', audioClip: bilalIntro, image: bilalImage },
 ];
 
@@ -21,7 +18,6 @@ const clinicMembers = [
   { name: 'Daniel Fajardo', role: 'Engineering' },
   { name: 'Massin Ihs', role: 'Engineering' },
   { name: 'Ket Hollingsworth', role: 'Computer Science' },
-  { name: 'Dominick Quaye', role: 'Engineering' },
   { name: 'Mauricio Bravo', role: 'Engineering' },
 ];
 
